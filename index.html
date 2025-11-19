@@ -1,4 +1,7 @@
 
 <body>
   <img src='https://static.wikia.nocookie.net/slashco-vr/images/a/a5/Old_SlashCo_Headquarters_floor_1_version_0.8_minimap_%28quests%29.png/revision/latest/scale-to-width-down/1000?cb=20250827162734'>
+  <script>
+    if (new URLSearchParams(document.location.search).get('timestamp')) window.location.replace(window.location.href + `?timestamp=${Date.now()}`);
+  </script>
 </body>
