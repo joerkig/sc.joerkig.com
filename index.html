@@ -1,7 +1,10 @@
-
 <body>
   <img src='https://slash.moe/img/locations/hq.png'>
   <script>
-    if (!new URLSearchParams(document.location.search).get('timestamp')) window.location.replace(window.location.href + `?timestamp=${Date.now()}`);
+    const url = new URL(window.location);
+    if (!url.searchParams.has('timestamp')) {
+      url.searchParams.set('timestamp', Date.now());
+      window.location.replace(url);
+    }
   </script>
 </body>
