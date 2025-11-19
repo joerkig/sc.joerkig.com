@@ -2,8 +2,11 @@
   <img src='https://slash.moe/img/locations/hq.png'>
   <script>
     const url = new URL(window.location);
-    if (!url.searchParams.has('timestamp') || url.searchParams.get('timestamp') < Date.now()) {
-      url.searchParams.set('timestamp', Date.now());
+    const threshold = 60 * 1000;
+    const now = Date.now();
+    const ts = url.searchParams.get('timestamp');
+    if (!ts || now - ts > threshold) {
+      url.searchParams.set('timestamp', now);
       window.location.replace(url);
     }
   </script>
