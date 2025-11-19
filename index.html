@@ -2,6 +2,6 @@
 <body>
   <img src='https://slash.moe/img/locations/hq.png'>
   <script>
-    if (new URLSearchParams(document.location.search).get('timestamp')) window.location.replace(window.location.href + `?timestamp=${Date.now()}`);
+    if (!new URLSearchParams(document.location.search).get('timestamp')) window.location.replace(window.location.href + `?timestamp=${Date.now()}`);
   </script>
 </body>
