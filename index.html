@@ -2,7 +2,7 @@
   <img src='https://slash.moe/img/locations/hq.png'>
   <script>
     const url = new URL(window.location);
-    if (!url.searchParams.has('timestamp')) {
+    if (!url.searchParams.has('timestamp') || url.searchParams.get('timestamp') < Date.now()) {
       url.searchParams.set('timestamp', Date.now());
       window.location.replace(url);
     }
